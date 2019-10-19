@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <Header/>
+    <v-container fluid class="pt-12">
+      <v-row class="justify-center">
+        <v-col cols="10">
+          <Todo v-for="i in 5" :key="i" class="py-1"/>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header';
+import Todo from './components/Todo'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Todo,
+  },
+  data: () => ({
+    //
+  }),
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
